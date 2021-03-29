@@ -1,7 +1,7 @@
 #ifndef XNET_NONCOPYABLE_H
 #define XNET_NONCOPYABLE_H
 
-namespace xnet
+namespace XNet
 {
 
 class noncopyable
