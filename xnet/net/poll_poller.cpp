@@ -13,10 +13,15 @@ PollPoller::~PollPoller()
 {
 }
 
-void PollPoller::poll()
+void PollPoller::poll(int timeoutMs, EventHandlerList* handlerList)
 {
-    int numEvent = ::poll(&*m_pollfds.begin(), m_pollfds.size(), -1);
-       
+    int numEvent = ::poll(&*m_pollfds.begin(), m_pollfds.size(), timeoutMs);
+    findActiveEvent(numEvent, handlerList);
+}
+
+void PollPoller::findActiveEvent(int eventNum, EventHandlerList* handlerList)
+{
+
 }
 
 }

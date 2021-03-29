@@ -14,7 +14,10 @@ public:
     PollPoller(/* args */);
     ~PollPoller();
 
-    void poll();
+    void poll(int timeoutMs, EventHandlerList* handlerList);
+
+private:
+    void findActiveEvent(int eventNum, EventHandlerList* handlerList);
 
 private:
     typedef std::vector<struct pollfd> PollFdList;
